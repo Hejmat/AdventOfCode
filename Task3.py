@@ -2,7 +2,7 @@
 seznam = []
 
 # Define input
-file = r'c:\Users\Matous.Matous\Desktop\Prace\IBS\AdventOfCode\No3_input.txt'
+file = 'No3_input.txt'
 with open(file,'r') as f:
     lines = f.readlines()
     for line in lines:
