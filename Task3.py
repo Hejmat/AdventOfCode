@@ -1,6 +1,4 @@
 ## https://adventofcode.com/2020/day/3
-## Change numbers according to step right on lines 16,26
-## Use lines 20,22,27 when u have to skip every second line
 seznam = []
 
 # Define input
@@ -13,17 +11,34 @@ f.close()
 
 a = len(seznam) #Number of lines
 b = len(seznam[0]) #Length of each line
-c = (a * 3) / b #Number to multiple line to avoid Index error, change the number according to the 'move right'
 
-trees = 0 #No of trees
-i = 0 #index
-#line = 1 # Use when the task is to skip every second line
-for x in seznam:
-    #if line % 2 != 0: # Use when the task is to skip every second line
+task = [1,3,5,7] #Steps
+result = 1
+for t in task:    
+    trees = 0 #No of trees
+    i = 0 #index
+    for x in seznam:
+        c = (a * t) / b
         x = x*(int(c)+1)
         if x[i] == '#':
             trees = trees + 1      
-        i = i + 3 # change the number according to the 'move right'
-    #line = line + 1 # Use when the task is to skip every second line
+        i = i + t #Add step to index
+    print(trees)
+    result = trees * result
 
-print('Result is:', trees)
+#Task, skip every second line, step = 1
+trees = 0 
+i = 0
+line = 1 
+for x in seznam:
+    c = (a * 1) / b
+    if line % 2 != 0: #Skip every second line
+        x = x*(int(c)+1)
+        if x[i] == '#':
+            trees = trees + 1      
+        i = i + 1
+    line = line + 1 
+print(trees)
+result = trees * result
+
+print('Result is:', result)
