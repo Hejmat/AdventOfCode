@@ -1,5 +1,4 @@
 ## https://adventofcode.com/2020/day/6
-seznam = []
 # Define input
 file = 'No6_input.txt'
 with open(file,'r') as f:
