@@ -25,14 +25,12 @@ def sublists(xs): #Function to create all contiguous sublists
     for j,k in itertools.combinations(ind,2):
         yield xs[j:k]
 
-while True:
-    for a in range(2,len(nums)): #Define range to create lists from the main list of all possible lengths (start on index 3 because we need at least two previous numbers)      
-        for x in list(sublists(nums[a:])):
-            if len(x) > 1:
-                if sum(x) == res: #If sum of sublist == result from Part1, compute result2 and break the loop
-                    print('Part2 result', min(x) + max(x))
-                    break
-        break
+for a in range(2,len(nums)): #Define range to create lists from the main list of all possible lengths (start on index 3 because we need at least two previous numbers)      
+    for x in list(sublists(nums[a:])):
+        if len(x) > 1:
+            if sum(x) == res: #If sum of sublist == result from Part1, compute result2 and break the loop
+                print('Part2 result', min(x) + max(x))
+                break
     break
         
         
