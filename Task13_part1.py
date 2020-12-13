@@ -11,7 +11,6 @@ t = int(data[0])
 buses = [int(x) for x in data[1].split(',') if x != 'x']
 
 times = []
-tid = []
 for b in buses:
     for x in range(t,t + b + 1):
         if x % b == 0:
